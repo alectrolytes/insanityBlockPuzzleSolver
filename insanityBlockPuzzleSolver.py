@@ -1,11 +1,38 @@
 # Establish 4 blocks
 # Red = 1, Blue = 10, Green = 100, White = 1000
 # Front, Right, Back, Left, Top, Bottom
+
+# r -- first cube
+# white, green, red, white, red, blue -- second cube
+# red, white, green, green, white, blue -- third cube
+# green, red, red, red, white, blue -- fourth cube
+
 blocks = []
-blocks.append([100,1,100,10,1000,10]) # first cube
-blocks.append([1000,100,1,1000,1,10]) # second cube
-blocks.append([1,1000,100,100,1000,10]) # third cube
-blocks.append([100,1,1,1,1000,10])  # fourth cube
+print "[ \tFront \tRight  \tBack \tLeft \tTop \tBottom \t]"
+firstCube = input("First Cube: ")
+secondCube = input("Second Cube: ")
+thirdCube = input("Third Cube: ")
+fourthCube = input("Fourth Cube: ")
+
+# Convert string to numeric values
+def convert(cube):
+  newCube = []
+  for i in cube:
+    if i.lower() == 'red':
+      newCube.append(1)
+    if i.lower() == 'blue':
+      newCube.append(10)
+    if i.lower() == 'green':
+      newCube.append(100)
+    if i.lower() == 'white':
+      newCube.append(1000)
+  return newCube
+
+blocks.append(convert(firstCube))
+blocks.append(convert(secondCube))
+blocks.append(convert(thirdCube))
+blocks.append(convert(fourthCube))
+
 #print block
 
 # Check correct results
@@ -22,19 +49,19 @@ def check(cubelist):
 
 # Turn cube
 def spin(cube): # Spin cube on Y axis
-    new_cube = []
-    new_cube = [cube[1],cube[2],cube[3],cube[0],cube[4],cube[5]]
-    return new_cube
+    newCube = []
+    newCube = [cube[1],cube[2],cube[3],cube[0],cube[4],cube[5]]
+    return newCube
 #print spin(blocks[0])
 
 def rotateZ(cube): # Rotate cube on Z axis
-    new_cube = [cube[0],cube[4],cube[2],cube[5],cube[3],cube[1]]
-    return new_cube
+    newCube = [cube[0],cube[4],cube[2],cube[5],cube[3],cube[1]]
+    return newCube
 #print rotate(blocks[0])
 
 def rotateX(cube):
-    new_cube = [cube[4],cube[1],cube[5],cube[3],cube[2],cube[0]]
-    return new_cube
+    newCube = [cube[4],cube[1],cube[5],cube[3],cube[2],cube[0]]
+    return newCube
 #print rotateX(blocks[0])
 
 def printcube(cubelist):
