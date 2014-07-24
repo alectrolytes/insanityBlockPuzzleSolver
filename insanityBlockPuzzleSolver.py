@@ -1,8 +1,9 @@
+# Author: Alec Huang
 # Establish 4 blocks
 # Red = 1, Blue = 10, Green = 100, White = 1000
 # Front, Right, Back, Left, Top, Bottom
 
-# r -- first cube
+# green, red, green, blue, white, blue -- first cube
 # white, green, red, white, red, blue -- second cube
 # red, white, green, green, white, blue -- third cube
 # green, red, red, red, white, blue -- fourth cube
